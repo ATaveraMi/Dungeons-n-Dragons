@@ -1,10 +1,10 @@
 #include "Calabozo.h"
-Calabozo::Calabozo(string _nombre, string _ubicacion, string _descripcion, Monster moun)
+Calabozo::Calabozo(string _nombre, string _ubicacion, string _descripcion, Monster _mounstro)
 {
     _nombre = nombre;
     _ubicacion = ubicacion;
     _descripcion = descripcion;
-    mounstro = 
+    mounstro = _mounstro;
 }
 
 Calabozo::~Calabozo()

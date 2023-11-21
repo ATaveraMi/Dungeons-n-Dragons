@@ -15,7 +15,7 @@ private:
 
 
 public:
-    Jugador(/* args */);
+    Jugador(string nombre, string raza);
     ~Jugador();
 };
 

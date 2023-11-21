@@ -9,10 +9,10 @@ private:
     string nombre;
     string ubicacion;
     string descripcion;
-    Monster mounstro;
+    Monster* mounstro;
 
 public:
-    Calabozo(string nombre, string ubicacion, string descripcion, Monster*);
+    Calabozo(string nombre, string ubicacion, string descripcion, Monster mounstro);
     ~Calabozo();
 };
 
