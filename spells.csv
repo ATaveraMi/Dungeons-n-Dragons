@@ -1,0 +1,17 @@
+
+name,level,type,duration,description
+"Mísiles mágicos",1,Conjuro,Instantánea,"Lanzas dardos mágicos que impactan automáticamente a tu objetivo."
+"Curación ligera",1,Evocación,Instantánea,"Restaura puntos de vida al objetivo tocado."
+"Escudo",1,Abjuración,"1 minuto","Un escudo invisible aparece protegiéndote de ataques."
+"Bola de fuego",3,Conjuro,Instantánea,"Lanzas una esfera de fuego que explota causando daño en un área."
+"Controlar muertos vivientes",4,Nigromancia,"1 minuto","Controlas a las criaturas no-muertas cercanas."
+"Invisibilidad",2,Ilusión,"1 hora","Te vuelves invisible hasta que lances un hechizo o realices un ataque."
+"Teletransporte",7,Conjuro,Instantánea,"Te teletransportas a un lugar conocido."
+"Resurrección",7,Nigromancia,Instantánea,"Devuelves la vida a una criatura muerta."
+"Muro de fuego",4,Conjuro,"1 minuto","Creas un muro llameante que daña a quienes lo atraviesan."
+"Levitar",2,Transmutación,"10 minutos","El objetivo flota en el aire a tu voluntad."
+"Detección de pensamientos",2,Adivinación,"1 minuto","Puedes leer la mente superficial del objetivo."
+"Parálisis",3,Encantamiento,"1 minuto","El objetivo queda paralizado."
+"Animar objetos",5,Transmutación,"1 minuto","Animas objetos inanimados para que te sirvan."
+"Visión verdadera",6,Adivinación,"1 hora","Ves las cosas como realmente son, penetrando ilusiones y disfraces."
+"Protección contra la energía",3,Abjuración,"1 hora","El objetivo gana resistencia contra un tipo de energía de tu elección."
