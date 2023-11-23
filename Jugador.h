@@ -11,12 +11,22 @@ private:
     string raza;
     string nombre;
     int lp;
-    LinkedList<Monster> mounstros_derrotados; 
+    
 
 
 public:
+    LinkedList<Monster> mounstros_derrotados; 
     Jugador(string nombre, string raza);
     ~Jugador();
+    int get_hp();
+    void set_hp(int hp);
+    string get_raza();
+    void set_raza(string raza);
+    string get_nombre();
+    void set_nombre(string nombre);
+    int get_lp();
+    void set_lp(int lp);
+
 };
 
 
