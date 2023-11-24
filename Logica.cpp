@@ -51,7 +51,7 @@ void Logica::readCalabozos() {
         getline(ss, descripcion, ',');
         
 
-        escenarios.addNode(Calabozo(nombre, ubicacion, descripcion, Monster ));
+        escenarios.addNode(Calabozo(nombre, ubicacion, descripcion, escogerMounstro() ));
     }
 
     monsters.print();

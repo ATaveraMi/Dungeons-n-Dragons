@@ -21,8 +21,11 @@ private:
     LinkedList<Calabozo> escenarios; 
 public:
     void readFile();
+    Monster* escogerMounstro();
     void readCalabozos();
     Logica();
+    
+
 };
 
 #endif // PROYECTODD_LOGICA_H
