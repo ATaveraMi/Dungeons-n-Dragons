@@ -1,7 +1,7 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 #include "Node.h"
-
+#include "Monster.h"
 template <typename T>
 class LinkedList{
 private:

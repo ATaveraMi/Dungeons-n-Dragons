@@ -1,5 +1,6 @@
 #include "Node.h"
 #include "Monster.h"
+#include "Calabozo.h"
 template <typename T>
 Node<T>::Node(T value) {
     this->data=value;
@@ -27,3 +28,5 @@ void Node<T>::setNext(Node* node) {
 }
 template class Node<int>;
 template class Node<Monster>;
+template class Node<Calabozo>;
+

@@ -1,15 +1,20 @@
 #include "Calabozo.h"
+
+Calabozo::Calabozo()
+{
+    nombre = "";
+    ubicacion = "";
+    descripcion = "";
+    mounstro = nullptr;
+}
 Calabozo::Calabozo(string _nombre, string _ubicacion, string _descripcion, Monster* _mounstro)
 {
-    _nombre = nombre;
-    _ubicacion = ubicacion;
-    _descripcion = descripcion;
+    nombre =_nombre;
+    ubicacion = _ubicacion ;
+    descripcion = _descripcion;
     mounstro = _mounstro;
 }
-Calabozo::~Calabozo()
-{
 
-}
 
 string Calabozo::getNombre(){
     return nombre;
@@ -36,5 +41,5 @@ Monster* Calabozo::getMounstro(){
 }
 
 void Calabozo::setMounstro(Monster* _mounstro){
-    mounstro = _mounstro
+    mounstro = _mounstro;
 }

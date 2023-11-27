@@ -8,7 +8,9 @@
 #include <sstream>
 #include "LinkedList.h" 
 #include "Calabozo.h"
+#include "Node.h"
 #include "Monster.h"
+#include <cstdlib> 
 
 using namespace std;
 

@@ -1,6 +1,7 @@
 
 #include "LinkedList.h"
 #include "Monster.h"
+#include "Calabozo.h"
 #include <iostream>
 using namespace std;
 template <typename T>
@@ -86,3 +87,4 @@ void LinkedList<T>::bubbleSort(){
 
 template class LinkedList<int>;
 template class LinkedList<Monster>;
+template class LinkedList<Calabozo>;

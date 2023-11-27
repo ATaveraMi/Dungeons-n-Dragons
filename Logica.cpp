@@ -1,10 +1,5 @@
-#pragma once
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include "Node.h"
-#include "Monster.h"
-#include "LinkedList.h"
+
+
 #include "Logica.h"
 
 using namespace std;
