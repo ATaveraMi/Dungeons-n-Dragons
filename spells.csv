@@ -1,17 +1,31 @@
-
-name,level,type,duration,description
-"Mísiles mágicos",1,Conjuro,Instantánea,"Lanzas dardos mágicos que impactan automáticamente a tu objetivo."
-"Curación ligera",1,Evocación,Instantánea,"Restaura puntos de vida al objetivo tocado."
-"Escudo",1,Abjuración,"1 minuto","Un escudo invisible aparece protegiéndote de ataques."
-"Bola de fuego",3,Conjuro,Instantánea,"Lanzas una esfera de fuego que explota causando daño en un área."
-"Controlar muertos vivientes",4,Nigromancia,"1 minuto","Controlas a las criaturas no-muertas cercanas."
-"Invisibilidad",2,Ilusión,"1 hora","Te vuelves invisible hasta que lances un hechizo o realices un ataque."
-"Teletransporte",7,Conjuro,Instantánea,"Te teletransportas a un lugar conocido."
-"Resurrección",7,Nigromancia,Instantánea,"Devuelves la vida a una criatura muerta."
-"Muro de fuego",4,Conjuro,"1 minuto","Creas un muro llameante que daña a quienes lo atraviesan."
-"Levitar",2,Transmutación,"10 minutos","El objetivo flota en el aire a tu voluntad."
-"Detección de pensamientos",2,Adivinación,"1 minuto","Puedes leer la mente superficial del objetivo."
-"Parálisis",3,Encantamiento,"1 minuto","El objetivo queda paralizado."
-"Animar objetos",5,Transmutación,"1 minuto","Animas objetos inanimados para que te sirvan."
-"Visión verdadera",6,Adivinación,"1 hora","Ves las cosas como realmente son, penetrando ilusiones y disfraces."
-"Protección contra la energía",3,Abjuración,"1 hora","El objetivo gana resistencia contra un tipo de energía de tu elección."
+nombre,descripcion,tipo,efecto,probabilidad_maligno
+Cura Menor,"Cura ligera para heridas menores",heal,5,10
+Bola de Fuego,"Lanza una esfera de fuego a los enemigos",damage,10,80
+Toque Curativo,"Toque mágico que cura heridas",heal,8,5
+Rayo de Hielo,"Dispara un rayo de hielo hacia el objetivo",damage,12,70
+Escudo Arcano,"Crea un escudo mágico para bloquear ataques",heal,5,10
+Explosión Radiante,"Causa daño a los no muertos con luz divina",damage,15,60
+Curación en Masa,"Cura a todos los aliados cercanos",heal,10,15
+Maldición Oscura,"Maldice al objetivo para reducir su resistencia",damage,8,50
+Escudo de Protección,"Crea un escudo que reduce el daño recibido",heal,5,10
+Rayo de la Muerte,"Lanza un rayo que inflige daño necrótico",damage,18,90
+Sanación Rápida,"Proporciona una cura rápida en combate",heal,6,10
+Llamas Envolventes,"Envuelve al enemigo en llamas",damage,8,40
+Restauración Mayor,"Restaura grandes cantidades de salud",heal,15,5
+Ráfaga Ácida,"Crea una explosión de ácido que daña a los enemigos",damage,12,70
+Toque de Regeneración,"Toque que comienza un proceso de regeneración",heal,10,20
+Veneno Mortal,"Infunde veneno en un arma para daño adicional",damage,5,80
+Luz Sanadora,"Irradia luz curativa para todos los aliados",heal,8,5
+Cuchilla Sombría,"Invoca una cuchilla oscura para daño letal",damage,20,95
+Resurrección,"Devuelve a la vida a un compañero caído",heal,0,5
+Aliento de Dragón,"Exhala fuego causando daño en un cono",damage,15,75
+Trance Curativo,"Entra en un trance que cura gradualmente",heal,7,10
+Flecha Ácida,"Dispara una flecha que inflige daño ácido",damage,10,60
+Barrera de Energía,"Crea una barrera que absorbe daño",heal,8,15
+Terror Siniestro,"Infunde miedo en los corazones de los enemigos",damage,12,50
+Renovación Celestial,"Renueva la energía vital de los aliados",heal,15,5
+Desintegración,"Desintegra a los enemigos con un rayo mortal",damage,20,99
+Aura Curativa,"Irresiste una aura que cura constantemente",heal,5,10
+Maleficio Oscuro,"Lanza un maleficio que debilita a los enemigos",damage,10,45
+Recuperación Rápida,"Recupera rápidamente de condiciones adversas",heal,8,10
+Invocación Elemental,"Invoca un elemental para luchar a tu lado",damage,15,80

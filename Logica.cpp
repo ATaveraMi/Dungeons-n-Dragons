@@ -6,6 +6,7 @@ using namespace std;
 
 Logica::Logica() {
     fname = "monsters_patched.csv";
+    
 }
 
 void Logica::readFile() {
@@ -32,6 +33,20 @@ void Logica::readFile() {
     monsters.print();
 }
 
+Monster* Logic::escogerMounstro(){
+    srand(time(nullptr));
+
+        // Genera un índice aleatorio entre 0 y el tamaño de la lista - 1
+        int randomIndex = rand() % 762;
+
+        // Recorre la lista hasta el índice aleatorio
+        Node* current = head;
+        for (int i = 0; i < randomIndex; ++i) {
+            current = current->next;
+        }
+        return current
+}
+
 void Logica::readCalabozos() {
     ifstream file("calabozos.csv");
 
@@ -50,4 +65,26 @@ void Logica::readCalabozos() {
     }
 
     monsters.print();
+}
+
+void Logica::readSpell(){
+    ifstream file("spells.csv");
+    string nom, tip, descr;
+    string ef, prob;
+    getline(file, line);
+    while (getline(file, line)) {
+        
+        stringstream ss(line);
+        getline(ss, nom, ',');
+        getline(ss, descr, ',');
+        getline(ss, tip, ',');
+        
+        getline(ss, ef, ',');
+        getline(ss, prob, ',');
+        
+
+        Spell sp(nom, descr ,tip, stoi(ef), stoi(prob) );
+        spells.insert(sp);
+    }
+
 }

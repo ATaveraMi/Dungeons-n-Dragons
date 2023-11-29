@@ -10,7 +10,10 @@
 #include "Calabozo.h"
 #include "Node.h"
 #include "Monster.h"
+#include "Hashtable.h"
 #include <cstdlib> 
+#include <ctime>    // Para usar time()
+#include <cstdlib>  // Para usar rand()
 
 using namespace std;
 
@@ -21,10 +24,13 @@ private:
     string nombre, ubicacion, descripcion;
     LinkedList<Monster> monsters;
     LinkedList<Calabozo> escenarios; 
+
 public:
+    Hashtable spells;
     void readFile();
     Monster* escogerMounstro();
     void readCalabozos();
+    void readSpell();
     Logica();
     
 

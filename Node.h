@@ -14,6 +14,7 @@ public:
     void setData(T value);
     Node* getNext() const;
     void setNext(Node* node);
+    
 };
 
 #endif
