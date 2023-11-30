@@ -12,6 +12,11 @@ T Node<T>::getData() const {
     return data;
 }
 
+
+
+
+
+
 template <typename T>
 void Node<T>::setData(T value) {
     data = value;

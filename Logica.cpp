@@ -6,6 +6,7 @@ using namespace std;
 
 Logica::Logica() {
     fname = "monsters_patched.csv";
+    srand(time(nullptr));
     
 }
 
@@ -33,19 +34,19 @@ void Logica::readFile() {
     monsters.print();
 }
 
-Monster* Logic::escogerMounstro(){
-    srand(time(nullptr));
+// Monster* Logica::escogerMounstro(){
+    
 
-        // Genera un índice aleatorio entre 0 y el tamaño de la lista - 1
-        int randomIndex = rand() % 762;
+//         // Genera un índice aleatorio entre 0 y el tamaño de la lista - 1
+//         int randomIndex = rand() % 762;
 
-        // Recorre la lista hasta el índice aleatorio
-        Node* current = head;
-        for (int i = 0; i < randomIndex; ++i) {
-            current = current->next;
-        }
-        return current
-}
+//         // Recorre la lista hasta el índice aleatorio
+//         Node<Monster> *current = monsters.getFirst();
+//         for (int i = 0; i < randomIndex; ++i) {
+//             current = current->getNext();
+//         }
+//         return current->getData();
+// }
 
 void Logica::readCalabozos() {
     ifstream file("calabozos.csv");
@@ -61,7 +62,7 @@ void Logica::readCalabozos() {
         getline(ss, descripcion, ',');
         
 
-        escenarios.addNode(Calabozo(nombre, ubicacion, descripcion, escogerMounstro() ));
+        escenarios.addNode(Calabozo(nombre, ubicacion, descripcion, new Monster("aarakocra",0.25,"humanoid (aarakocra)","Medium",12,13,"neutral good") ));
     }
 
     monsters.print();

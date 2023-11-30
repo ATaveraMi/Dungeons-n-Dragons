@@ -11,9 +11,6 @@ Spell::Spell(/* args */)
 
 }
 
-Spell::~Spell()
-{
-}
 
 Spell::Spell(string _nombre, string _descripcion, string _tipo, int _efecto, int _probabilidad){
     nombre =_nombre;

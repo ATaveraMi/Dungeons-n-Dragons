@@ -6,6 +6,7 @@ template <typename T>
 class LinkedList{
 private:
     Node<T> *first;
+    
 public:
     LinkedList();
     void addNode(Node<T> *node);
@@ -15,5 +16,8 @@ public:
     Node<T>* findAtPos(int pos);
     void bubbleSort();
     void addNode(T data);
+    Node<T>* getFirst() {
+        return first;
+    }
 };
 #endif
