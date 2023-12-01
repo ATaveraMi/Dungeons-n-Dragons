@@ -2,6 +2,8 @@
 #define LINKED_LIST_H
 #include "Node.h"
 #include "Monster.h"
+#include "Calabozo.h"
+#include "Spell.h"
 template <typename T>
 class LinkedList{
 private:
@@ -19,5 +21,6 @@ public:
     Node<T>* getFirst() {
         return first;
     }
+    void printFirst();
 };
 #endif

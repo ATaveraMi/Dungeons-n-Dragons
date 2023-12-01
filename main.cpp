@@ -9,7 +9,9 @@ using namespace std;
 int main() {
 
     Logica dnd;
-    dnd.readFile();
+    
+    dnd.menu();
+    
 
 
     return 0;

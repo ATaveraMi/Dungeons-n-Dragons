@@ -9,8 +9,10 @@
 #include "LinkedList.h" 
 #include "Calabozo.h"
 #include "Node.h"
+#include "Spell.h"
 #include "Monster.h"
-#include "Hashtable.h"
+#include "Jugador.h"
+#include "Dado.h"
 #include <cstdlib> 
 #include <ctime>    // Para usar time()
 #include <cstdlib>  // Para usar rand()
@@ -24,15 +26,20 @@ private:
     string nombre, ubicacion, descripcion;
     LinkedList<Monster> monsters;
     LinkedList<Calabozo> escenarios; 
+    LinkedList<Spell> spells; 
 
 public:
-    Hashtable spells;
+    
     void readFile();
     Monster* escogerMounstro();
     void readCalabozos();
     void readSpell();
     Logica();
-    
+    void menu();
+    void cargarArchivos();
+    Jugador* crearPersonaje();
+    Monster* entrarCalabozo();
+    void stats(Jugador* jugador);
 
 };
 

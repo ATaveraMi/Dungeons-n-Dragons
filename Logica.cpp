@@ -7,6 +7,10 @@ using namespace std;
 Logica::Logica() {
     fname = "monsters_patched.csv";
     srand(time(nullptr));
+    Dado* dadoAtaque = new Dado(10);
+    Dado* dadoRecuperar = new Dado(8);
+    Dado* ElegirMounstro = new Dado(730);
+
     
 }
 
@@ -31,7 +35,7 @@ void Logica::readFile() {
         monsters.addNode(Monster(name, stof(cr), type, size, stoi(ac), stoi(hp), align));
     }
 
-    monsters.print();
+    
 }
 
 // Monster* Logica::escogerMounstro(){
@@ -48,6 +52,8 @@ void Logica::readFile() {
 //         return current->getData();
 // }
 
+
+
 void Logica::readCalabozos() {
     ifstream file("calabozos.csv");
 
@@ -63,9 +69,11 @@ void Logica::readCalabozos() {
         
 
         escenarios.addNode(Calabozo(nombre, ubicacion, descripcion, new Monster("aarakocra",0.25,"humanoid (aarakocra)","Medium",12,13,"neutral good") ));
+        //Falta hacer que el mounstro que se crea sea random
     }
+    
 
-    monsters.print();
+  
 }
 
 void Logica::readSpell(){
@@ -84,8 +92,89 @@ void Logica::readSpell(){
         getline(ss, prob, ',');
         
 
-        Spell sp(nom, descr ,tip, stoi(ef), stoi(prob) );
-        spells.insert(sp);
+        
+        spells.addNode(Spell(nom, descr ,tip, stoi(ef), stoi(prob) ));
     }
+
+    
+    
+
+}
+
+void Logica::cargarArchivos(){
+    readFile();
+    readCalabozos();
+    readSpell();
+    cout <<"Bienvenido a Dungeons and Dragons!" << endl <<"¡Es hora de empezar a personalizar tu personaje!";
+
+}
+
+Jugador* Logica::crearPersonaje(){
+    string  nombre, tipo;
+    cout << "\n¿Cómo te llamas? ";
+    cin >> nombre;
+    cout <<"Perfecto "<<nombre <<"! En este maravillos munco tenemos 4 tipos de criaturas.\nPresiona 1 si deseas ser humano,\n2 si quieres ser un enano o\n3 si deseas ser un elfo. Tranquil@ esto no afectara en nada tu modalidad de juego"<< endl;
+    cin>>tipo;
+    while (tipo != "1" && tipo != "2" && tipo != "3") {
+        cout << "Tipo invalido, por favor ingresar de nuevo: ";
+        cin>> tipo;
+    }
+    if (tipo == "1"){
+        return new Jugador(nombre, "humano");
+    } else if (tipo == "2"){
+    
+        return new Jugador(nombre, "enano");
+    } else if (tipo == "3"){
+        return new Jugador(nombre, "elfo");
+    } else { 
+        return new Jugador();
+    }
+}
+
+void Logica::stats(Jugador* jugador){
+    if (jugador->get_hp() <=0){
+        jugador->imprimirMensaje(false);
+     } else{
+        jugador->imprimirMensaje(true);
+     }
+}
+
+void Logica::menu(){
+    string choice;
+    bool keepPlaying = true;
+    cargarArchivos();
+    Jugador* jugador1 = crearPersonaje();
+    cout << "\nAhora sí, ¡A JUGAR!";
+
+    
+    do {
+        system("clear");
+        cout <<"MENU D&D:\n"<<endl;
+        cout <<"1. Ir a un calabozo"<<endl;
+        cout <<"2. Mostrar hechizos"<<endl;
+        cout <<"3. Mostrar stats"<<endl;
+        cout <<"4. Ruleta Rusa (gana 15hp / pierde 15 hp)"<<endl;
+        cout <<"5. Acabar Juego"<<endl;
+        cin >> choice;
+        if (choice == "1") {
+            //entrarCalabozo();
+            
+        }
+        if (choice == "2") {
+            spells.print();
+            keepPlaying = false;
+        }
+        if (choice == "3") {
+            stats(jugador1);
+            keepPlaying = false;
+
+        }
+
+
+        
+
+        
+
+    } while (keepPlaying);
 
 }

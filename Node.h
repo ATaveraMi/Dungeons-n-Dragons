@@ -11,6 +11,7 @@ public:
     Node(T value);
 
     T getData() const;
+    T* getDataPointer() const;
     void setData(T value);
     Node* getNext() const;
     void setNext(Node* node);

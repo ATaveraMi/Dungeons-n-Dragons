@@ -17,6 +17,7 @@ private:
 public:
     LinkedList<Monster> mounstros_derrotados; 
     Jugador(string nombre, string raza);
+    Jugador();
     ~Jugador();
     int get_hp();
     void set_hp(int hp);
@@ -26,6 +27,7 @@ public:
     void set_nombre(string nombre);
     int get_lp();
     void set_lp(int lp);
+    void imprimirMensaje(bool vivo);
 
 };
 

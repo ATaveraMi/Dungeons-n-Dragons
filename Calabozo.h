@@ -25,8 +25,8 @@ public:
     Monster* getMounstro();
     void setMounstro(Monster* mounstro);
     friend std::ostream& operator<<(std::ostream& os, const Calabozo& calabozo) {
-        os << "Bienvenido al planeta "<< calabozo.ubicacion << calabozo.nombre << ". "<< calabozo.descripcion << ". Te enfrentaras con : " << calabozo.mounstro->getName()
-           ;
+        os << "Bienvenido a "<< calabozo.ubicacion <<". Te encuentras en " << calabozo.nombre << ". "<< calabozo.descripcion << ". De pronto aparece un "<<calabozo.mounstro->getType()<< " atentando contra tu vida." 
+        << " Se llama "<<calabozo.mounstro->getName() << " y no se ve muy amigable";
         return os;}
     bool operator ==(Calabozo& c){
         return this->nombre == c.nombre;

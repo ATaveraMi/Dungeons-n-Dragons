@@ -1,3 +1,5 @@
+#ifndef SPELL_H
+#define SPELL_H
 #include<iostream>
 #include<vector>
 #include<string>
@@ -43,5 +45,6 @@ public:
     bool operator ==(Spell s){
         return this->efecto==s.efecto;
     }
-    string toString();
+   
 };
+#endif

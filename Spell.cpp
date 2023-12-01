@@ -55,6 +55,3 @@ void Spell::setEfecto(int _e){
     efecto = _e;
 
 }
-string Spell::toString(){
-    return "Nombre: "+ this->nombre+" Descripcion: "+this->descripcion+" efecto: "+to_string(this->efecto)+ " Tipo: "+this->tipo+" probablidad de ser mailigno: "+ to_string(this->probabilidad);
-}

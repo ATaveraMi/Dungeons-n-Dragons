@@ -1,7 +1,6 @@
 
 #include "LinkedList.h"
-#include "Monster.h"
-#include "Calabozo.h"
+
 #include <iostream>
 using namespace std;
 template <typename T>
@@ -13,11 +12,14 @@ LinkedList<T>::LinkedList() {
 
 template <typename T>
 void LinkedList<T>::print() {
-    Node<T> *temp = first;
+    if (first == nullptr){
+        cout << "Lista vacía"<<endl;
+    }
+    else{Node<T> *temp = first;
     for (int i = 0; temp != nullptr; i++) {
         cout << temp->getData() << endl;
         temp = temp->getNext();
-    }
+    }}
 }
 template <typename T>
 int LinkedList<T>::find(T data){
@@ -84,7 +86,14 @@ void LinkedList<T>::bubbleSort(){
         temp1=temp1->getNext();
     }
 }
+template <typename T>
+void LinkedList<T>::printFirst(){
+    cout << first->getData() << endl;
+
+}
+
 
 template class LinkedList<int>;
 template class LinkedList<Monster>;
 template class LinkedList<Calabozo>;
+template class LinkedList<Spell>;

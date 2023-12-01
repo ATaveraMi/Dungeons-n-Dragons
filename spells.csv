@@ -1,31 +1,31 @@
 nombre,descripcion,tipo,efecto,probabilidad_maligno
-Cura Menor,"Cura ligera para heridas menores",heal,5,10
-Bola de Fuego,"Lanza una esfera de fuego a los enemigos",damage,10,80
-Toque Curativo,"Toque mágico que cura heridas",heal,8,5
-Rayo de Hielo,"Dispara un rayo de hielo hacia el objetivo",damage,12,70
-Escudo Arcano,"Crea un escudo mágico para bloquear ataques",heal,5,10
-Explosión Radiante,"Causa daño a los no muertos con luz divina",damage,15,60
-Curación en Masa,"Cura a todos los aliados cercanos",heal,10,15
-Maldición Oscura,"Maldice al objetivo para reducir su resistencia",damage,8,50
-Escudo de Protección,"Crea un escudo que reduce el daño recibido",heal,5,10
-Rayo de la Muerte,"Lanza un rayo que inflige daño necrótico",damage,18,90
-Sanación Rápida,"Proporciona una cura rápida en combate",heal,6,10
-Llamas Envolventes,"Envuelve al enemigo en llamas",damage,8,40
-Restauración Mayor,"Restaura grandes cantidades de salud",heal,15,5
-Ráfaga Ácida,"Crea una explosión de ácido que daña a los enemigos",damage,12,70
-Toque de Regeneración,"Toque que comienza un proceso de regeneración",heal,10,20
-Veneno Mortal,"Infunde veneno en un arma para daño adicional",damage,5,80
-Luz Sanadora,"Irradia luz curativa para todos los aliados",heal,8,5
-Cuchilla Sombría,"Invoca una cuchilla oscura para daño letal",damage,20,95
-Resurrección,"Devuelve a la vida a un compañero caído",heal,0,5
-Aliento de Dragón,"Exhala fuego causando daño en un cono",damage,15,75
-Trance Curativo,"Entra en un trance que cura gradualmente",heal,7,10
-Flecha Ácida,"Dispara una flecha que inflige daño ácido",damage,10,60
-Barrera de Energía,"Crea una barrera que absorbe daño",heal,8,15
-Terror Siniestro,"Infunde miedo en los corazones de los enemigos",damage,12,50
-Renovación Celestial,"Renueva la energía vital de los aliados",heal,15,5
-Desintegración,"Desintegra a los enemigos con un rayo mortal",damage,20,99
-Aura Curativa,"Irresiste una aura que cura constantemente",heal,5,10
-Maleficio Oscuro,"Lanza un maleficio que debilita a los enemigos",damage,10,45
-Recuperación Rápida,"Recupera rápidamente de condiciones adversas",heal,8,10
-Invocación Elemental,"Invoca un elemental para luchar a tu lado",damage,15,80
+Cura Menor,Cura ligera para heridas menores,heal,5,10
+Bola de Fuego,Lanza una esfera de fuego a los enemigos,damage,10,80
+Toque Curativo,Toque mágico que cura heridas,heal,8,5
+Rayo de Hielo,Dispara un rayo de hielo hacia el objetivo,damage,12,70
+Escudo Arcano,Crea un escudo mágico para bloquear ataques,heal,5,10
+Explosión Radiante,Causa daño a los no muertos con luz divina,damage,15,60
+Curación en Masa,Cura a todos los aliados cercanos,heal,10,15
+Maldición Oscura,Maldice al objetivo para reducir su resistencia,damage,8,50
+Escudo de Protección,Crea un escudo que reduce el daño recibido,heal,5,10
+Rayo de la Muerte,Lanza un rayo que inflige daño necrótico,damage,18,90
+Sanación Rápida,Proporciona una cura rápida en combate,heal,6,10
+Llamas Envolventes,Envuelve al enemigo en llamas,damage,8,40
+Restauración Mayor,Restaura grandes cantidades de salud,heal,15,5
+Ráfaga Ácida,Crea una explosión de ácido que daña a los enemigos,damage,12,70
+Toque de Regeneración,Toque que comienza un proceso de regeneración,heal,10,20
+Veneno Mortal,Infunde veneno en un arma para daño adicional,damage,5,80
+Luz Sanadora,Irradia luz curativa para todos los aliados,heal,8,5
+Cuchilla Sombría,Invoca una cuchilla oscura para daño letal,damage,20,95
+Resurrección,Devuelve a la vida a un compañero caído,heal,0,5
+Aliento de Dragón,Exhala fuego causando daño en un cono,damage,15,75
+Trance Curativo,Entra en un trance que cura gradualmente,heal,7,10
+Flecha Ácida,Dispara una flecha que inflige daño ácido,damage,10,60
+Barrera de Energía,Crea una barrera que absorbe daño,heal,8,15
+Terror Siniestro,Infunde miedo en los corazones de los enemigos,damage,12,50
+Renovación Celestial,Renueva la energía vital de los aliados,heal,15,5
+Desintegración,Desintegra a los enemigos con un rayo mortal,damage,20,99
+Aura Curativa,Irresiste una aura que cura constantemente,heal,5,10
+Maleficio Oscuro,Lanza un maleficio que debilita a los enemigos,damage,10,45
+Recuperación Rápida,Recupera rápidamente de condiciones adversas,heal,8,10
+Invocación Elemental,Invoca un elemental para luchar a tu lado,damage,15,80
