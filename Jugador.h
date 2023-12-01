@@ -17,6 +17,7 @@ private:
 public:
     LinkedList<Monster> mounstros_derrotados; 
     Jugador(string nombre, string raza);
+    Jugador(string nombre, string raza, int _hp, int _lp);
     Jugador();
     ~Jugador();
     int get_hp();

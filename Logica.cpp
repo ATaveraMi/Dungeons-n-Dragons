@@ -131,22 +131,24 @@ Jugador* Logica::crearPersonaje(){
     string  nombre, tipo;
     cout << "\n¿Cómo te llamas? ";
     cin >> nombre;
-    cout <<"Perfecto "<<nombre <<"! En este maravillos munco tenemos 4 tipos de criaturas.\nPresiona 1 si deseas ser humano,\n2 si quieres ser un enano o\n3 si deseas ser un elfo. Tranquil@ esto no afectara en nada tu modalidad de juego"<< endl;
+    cout <<"\n\nPerfecto "<<nombre <<"! En este maravillos munco tenemos 3 tipos de criaturas.\nPresiona 1 si deseas ser humano,\n2 si quieres ser un enano o\n3 si deseas ser un elfo.\nTranquil@ esto no afectara en nada tu modalidad de juego\n"<< endl;
     cin>>tipo;
     while (tipo != "1" && tipo != "2" && tipo != "3") {
-        cout << "Tipo invalido, por favor ingresar de nuevo: ";
+        cout << "\nTipo invalido, por favor ingresar de nuevo: ";
         cin>> tipo;
     }
     if (tipo == "1"){
-        return new Jugador(nombre, "humano");
+        return new Jugador(nombre, "humano",8,120);
     } else if (tipo == "2"){
     
-        return new Jugador(nombre, "enano");
+        return new Jugador(nombre, "enano", 10,100);
     } else if (tipo == "3"){
-        return new Jugador(nombre, "elfo");
+        return new Jugador(nombre, "elfo",12,80);
     } else { 
         return new Jugador();
     }
+    cout << "\n\n";
+    cout<<"----------------------------------------------------------------"<<endl;
 }
 
 

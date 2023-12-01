@@ -14,6 +14,18 @@ Jugador::Jugador(string _nombre, string _raza)
     
 }
 
+Jugador::Jugador(string _nombre, string _raza, int _hp, int _lp)
+{
+    raza = _raza;
+    nombre = _nombre;
+    hp=  _hp;
+    lp =  _lp;
+    
+}
+
+
+
+
 Jugador::~Jugador()
 {
 }
@@ -57,7 +69,7 @@ void Jugador::imprimirMensaje(bool vivo){
         cout << "En estos momentos debes de preguntarte," <<nombre<< ", si fuiste un buen " <<raza<<endl;
         cout << "Mataste a .........."<<endl;
         if (mounstros_derrotados.getFirst() == nullptr){
-        cout << "NADIE";
+        cout << "NADIE"<<endl;
     } else{
         mounstros_derrotados.print();
     }
@@ -69,7 +81,7 @@ void Jugador::imprimirMensaje(bool vivo){
     cout << "¡Eres un duro! Haces un máximo " << hp << " de daño"<<endl;
     cout << "Tienes " <<lp << " de vida, Recuerda que lo max es 999"<<endl;
     if (mounstros_derrotados.getFirst() == nullptr){
-        cout << "Aún no matas ni a una mosca";
+        cout << "Aún no matas ni a una mosca"<<endl;
     } else{
         mounstros_derrotados.print();
     }
