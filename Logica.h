@@ -49,6 +49,7 @@ public:
     void atacar(Jugador* j, Monster* m, string agresor);
     void triunfo(Jugador* j);
     void derrota(Jugador* derrota);
+    void menuSpell(Jugador* j, Monster* mon);
     };
 
 #endif // PROYECTODD_LOGICA_H

@@ -132,6 +132,9 @@ Jugador* Logica::crearPersonaje(){
     }
 }
 
+
+
+
 void Logica::stats(Jugador* jugador){
     if (jugador->get_hp() <=0){
         jugador->imprimirMensaje(false);
@@ -280,11 +283,55 @@ void Logica::menuBatalla(Jugador* j, Monster* monster) {
             }
         } else if (respuestas == "2") {
             spells.print();
+            menuSpell(j, monster);
         } 
     }
 }
 
+void Logica::menuSpell(Jugador* j, Monster* mon){
+    cout << "Presione ENTER...";
+    string res;
+    int es;
+    cin.ignore();
+    cin.get(); 
+    cout << "MENU SPELL:"<<endl;
+    cout << "1. Usar"<<endl;
+    cout << "2. reordenar"<<endl;
+    cout << "3. salir de MENU SPELL"<<endl;
+    cin >>res;
+    if (res == "1"){
+        cout << endl<<"1. ingresa la posicion del hechizo: ";
+        cin >>es;
+        
+        Spell hech = spells.findAtPos(es)->getData();
+        if (hech.getTipo() =="heal"){
+            cout << "Tienes " << j->get_lp() << " de vida"<<endl;
 
+            cout<< "Ahora consumiste " <<hech.getNombre() <<endl;
+            j->set_lp(j->get_lp()+ hech.getEfecto());
+
+            cout << "Ahora tienes " << j->get_lp() << " de vida"<<endl;
+
+        } else {
+            cout << mon->getName()<< " tiene " << mon->getHp() <<" de vida" <<endl;
+            cout<< "Ahora usaste " <<hech.getNombre() <<endl;
+            mon->setHp(mon->getHp()-hech.getEfecto());
+            cout <<"Ahora "<< mon->getName()<< " tiene " << mon->getHp() <<" de vida" <<endl;
+
+
+
+
+        }
+
+
+    }
+    else if (res == "2"){
+        spells.bubbleSort();
+        spells.print();
+    }
+
+
+}
 
 
 void Logica::menuD(bool nuevo){
@@ -302,24 +349,33 @@ void Logica::menuD(bool nuevo){
         cout <<"1. Ir a un calabozo"<<endl;
         cout <<"2. Mostrar hechizos"<<endl;
         cout <<"3. Mostrar stats"<<endl;
-        cout <<"4. Ruleta Rusa (gana 15hp / pierde 15 hp)"<<endl;
-        cout <<"5. Acabar Juego"<<endl;
+       
+        cout <<"4. Acabar Juego"<<endl;
         cin >> choice;
         if (choice == "1") {
             entrarCalabozo(jugador1);
             
-            keepPlaying = false;
+          
 
             
         }
         else if (choice == "2") {
             spells.print();
-            keepPlaying = false;
+            cout << "Presione ENTER...";
+    cin.ignore();
+    cin.get(); 
+            
+           
         }
         else if (choice == "3") {
             stats(jugador1);
-            keepPlaying = false;
+            cout << "Presione ENTER...";
+    cin.ignore();
+    cin.get(); 
+           
 
+        } else if (choice == "4") {
+            keepPlaying = false;
         }
 
 
