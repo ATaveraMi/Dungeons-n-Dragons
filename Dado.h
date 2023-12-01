@@ -13,6 +13,7 @@ public:
     Dado(int numCaras);
     int lanzar();
     int lanzar(int caras); 
+    int lanzar(int caras, bool silencioso);
     
 private:
     int caras;

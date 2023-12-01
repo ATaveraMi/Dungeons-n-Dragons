@@ -19,4 +19,14 @@ int Dado::lanzar(int ncaras ) {
     return rolled;
 }
 
+int Dado::lanzar(int ncaras, bool silencioso ) {
+    int rolled = rand() % ncaras + 1;
+    
+    return rolled;
+}
+
+
+
+
+
 

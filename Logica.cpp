@@ -47,11 +47,21 @@ void Logica::readFile() {
     
 }
 
-// Monster* Logica::escogerMounstro(){
+// Monster Logica::escogerMounstro(){
 //     Node<Monster>* randomMonst = monsters.findAtPos(ElegirMounstro->lanzar());
 //     return randomMonst->getData(); // Esto ya devuelve un Monster*
+    
+
 // }
 
+
+Monster* Logica::escogerMounstro(){
+    Node<Monster>* randomMonstNodo = monsters.findAtPos(ElegirMounstro->lanzar(730, true));
+    Monster randomMonst = randomMonstNodo->getData();
+    Monster* mont = new Monster(randomMonst.getName(), randomMonst.getCr(), randomMonst.getType(), randomMonst.getSize(), randomMonst.getAc(), randomMonst.getHp(), randomMonst.getAlign());
+    return mont; // Esto ya devuelve un Monster*
+
+}
 
 void Logica::readCalabozos() {
     ifstream file("calabozos.csv");
@@ -66,10 +76,17 @@ void Logica::readCalabozos() {
         getline(ss, ubicacion, ',');
         getline(ss, descripcion, ',');
 
+        // Monster montnp = escogerMounstro();
+        // Monster* mont = new Monster(montnp.getName(), montnp.getCr(), montnp.getType(), montnp.getSize(), montnp.getAc(), montnp.getHp(), montnp.getAlign());
+        //escenarios.addNode(Calabozo(nombre, ubicacion, descripcion, new Monster("aarakocra",0.25,"humanoid (aarakocra)","Medium",12,13,"neutral good") ));
+        Monster* nuevoMounstro = escogerMounstro();
+        escenarios.addNode(Calabozo(nombre, ubicacion, descripcion, nuevoMounstro ));
+
+
+
         
         
 
-        escenarios.addNode(Calabozo(nombre, ubicacion, descripcion, new Monster("aarakocra",0.25,"humanoid (aarakocra)","Medium",12,13,"neutral good") ));
         //Falta hacer que el mounstro que se crea sea random
     }
     
@@ -375,6 +392,7 @@ void Logica::menuD(bool nuevo){
            
 
         } else if (choice == "4") {
+            cout <<"Gracias por jugar!";
             keepPlaying = false;
         }
 
