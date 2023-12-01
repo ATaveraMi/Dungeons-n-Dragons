@@ -145,7 +145,7 @@ void Logica::entrarCalabozo(Jugador* jug){
     Calabozo cal = cuarto->getData();
     Monster* mon = cal.getMounstro();
     
-    while (mon->getHp() >=0 ){
+    while (mon->getHp() <=0 ){
         cout << cuarto->getData() << endl;
         cuarto = escenarios.findAtPos(dadoCalabozo->lanzar());
 
@@ -166,10 +166,17 @@ void Logica::entrarCalabozo(Jugador* jug){
 void Logica::triunfo(Jugador* j ){
     cout <<"Felicidades! MATASTE a uno de los malos"<<endl;
     j->imprimirMensaje(true);
+    cout << "Tira un dado para recuperar vida"<<endl;
     cout << "Presione ENTER...";
+    
         cin.ignore();
         cin.get(); 
-    menuD();
+    
+    
+    
+    j->set_lp(j->get_lp()+dadoRecuperar->lanzar());
+    cout<<"Ahora tienes " << j->get_lp()<<" de vida.";
+    
 
 }
 
@@ -187,12 +194,12 @@ void Logica::atacar(Jugador* j, Monster* mon, string quien){
         cout<< j->get_nombre() << " Es te es tu lp "<<j->get_lp()<<endl;
         cout << mon->getName() << " Tiene un hp de "<< mon->getHp()<<endl;
         mon->setHp(mon->getHp()-(dadoPersonaje->lanzar(j->get_hp())));
-        cout << "Las cosas han cambiado";
+        cout << "Las cosas han cambiado ";
         cout << mon->getName() << " Tiene un hp de "<< mon->getHp()<<endl;
         if(mon->getHp()<0){
             //j->mounstros_derrotados.addNode(mon)
             j->mounstros_derrotados.addNode(*new Monster(*mon));
-            triunfo(j);
+            
 
 
 
@@ -246,6 +253,7 @@ void Logica::atacar(Jugador* j, Monster* mon, string quien){
 //     }}
 
 void Logica::menuBatalla(Jugador* j, Monster* monster) {
+
     string respuestas;
     cout << "Presione ENTER...";
     cin.ignore();
@@ -260,7 +268,16 @@ void Logica::menuBatalla(Jugador* j, Monster* monster) {
         cin >> respuestas;
         if (respuestas == "1") {
             atacar(j, monster, "atacante");
+            if (monster->getHp()<=0){
+                triunfo(j);
+                break;
+            }
+            
             atacar(j, monster, "natacante");
+            if (j->get_lp()<=0){
+                
+                break;
+            }
         } else if (respuestas == "2") {
             spells.print();
         } 
@@ -270,13 +287,13 @@ void Logica::menuBatalla(Jugador* j, Monster* monster) {
 
 
 
-void Logica::menuD(){
+void Logica::menuD(bool nuevo){
     string choice;
     bool keepPlaying = true;
     cargarArchivos();
     Jugador* jugador1 = crearPersonaje();
-    cout << "\nAhora sí, ¡A JUGAR!"<<endl;
-    cout << "Para entrar a cada calabozo se lanzará un dado de 20 caras para ver a cuál se entra";
+    
+    
 
     
     do {

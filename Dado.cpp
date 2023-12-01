@@ -8,7 +8,7 @@ Dado::Dado(int numCaras) : caras(numCaras) {
 
 int Dado::lanzar() {
     int rolled = rand() % caras + 1;
-    cout << "\nSacaste un " << rolled << "."<<endl;
+    cout << "\nEl dado muestra un " << rolled << "."<<endl;
     return rolled;
 }
 

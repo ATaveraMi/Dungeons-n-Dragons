@@ -10,7 +10,7 @@ int main() {
 
     Logica dnd;
     
-    dnd.menuD();
+    dnd.menuD(true);
     
 
 

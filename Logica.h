@@ -10,7 +10,6 @@
 #include "Calabozo.h"
 #include "Node.h"
 #include "Spell.h"
-
 #include "Monster.h"
 #include "Jugador.h"
 #include "Dado.h"
@@ -41,7 +40,7 @@ public:
     void readCalabozos();
     void readSpell();
     Logica();
-    void menuD();
+    void menuD(bool nuevo);
     void cargarArchivos();
     Jugador* crearPersonaje();
     void entrarCalabozo(Jugador* jugador);
@@ -49,8 +48,7 @@ public:
     void menuBatalla(Jugador* j, Monster* m);
     void atacar(Jugador* j, Monster* m, string agresor);
     void triunfo(Jugador* j);
-    void derrota(Jugador* derrota)
-
-;};
+    void derrota(Jugador* derrota);
+    };
 
 #endif // PROYECTODD_LOGICA_H
