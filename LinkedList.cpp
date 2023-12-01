@@ -94,6 +94,7 @@ void LinkedList<T>::printFirst(){
 
 
 template class LinkedList<int>;
+
 template class LinkedList<Monster>;
 template class LinkedList<Calabozo>;
 template class LinkedList<Spell>;

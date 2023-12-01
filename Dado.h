@@ -1,21 +1,24 @@
+
+
 #ifndef DADO_H
 #define DADO_H
 
-#include <cstdlib> 
 #include <iostream>
-#include <ctime> 
-
 using namespace std;
+#include <cstdlib>
+#include <ctime>
 
 class Dado {
+public:
+    Dado(int numCaras);
+    int lanzar();
+    int lanzar(int caras); 
+    
 private:
     int caras;
-
-public:
-    Dado(int numCaras);  
-    
-    int lanzar();      
-    int lanzar(int caras);  
 };
+#endif
 
-#endif // DADO_H
+
+
+

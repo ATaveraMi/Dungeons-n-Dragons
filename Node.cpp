@@ -8,11 +8,6 @@ Node<T>::Node(T value) {
     this->next=nullptr;
 }
 
-template <typename T>
-T Node<T>::getData() const {
-    return data;
-}
-
 
 
 
@@ -31,6 +26,12 @@ template <typename T>
 void Node<T>::setNext(Node* node) {
     next = node;
 }
+
+template <typename T>
+T Node<T>::getData() const {
+    return data;
+}
+
 template class Node<int>;
 template class Node<Monster>;
 template class Node<Calabozo>;

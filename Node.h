@@ -9,6 +9,7 @@ private:
 
 public:
     Node(T value);
+     Node(T* newPtrData);
 
     T getData() const;
     T* getDataPointer() const;

@@ -7,9 +7,18 @@ using namespace std;
 Logica::Logica() {
     fname = "monsters_patched.csv";
     srand(time(nullptr));
-    Dado* dadoAtaque = new Dado(10);
-    Dado* dadoRecuperar = new Dado(8);
-    Dado* ElegirMounstro = new Dado(730);
+    // Dado* dadoAtaqueMounstro = new Dado(10);
+    // Dado* dadoRecuperar = new Dado(8);
+    // Dado* ElegirMounstro = new Dado(730);
+    // Dado* dadoPersonaje = new Dado(10);
+    // Dado* dadoCalabozo = new Dado(19);
+    dadoAtaqueMounstro = new Dado(10);
+    dadoRecuperar = new Dado(8);
+    ElegirMounstro = new Dado(730);
+    dadoPersonaje = new Dado(10);
+    dadoCalabozo = new Dado(19);
+    
+
 
     
 }
@@ -39,19 +48,9 @@ void Logica::readFile() {
 }
 
 // Monster* Logica::escogerMounstro(){
-    
-
-//         // Genera un índice aleatorio entre 0 y el tamaño de la lista - 1
-//         int randomIndex = rand() % 762;
-
-//         // Recorre la lista hasta el índice aleatorio
-//         Node<Monster> *current = monsters.getFirst();
-//         for (int i = 0; i < randomIndex; ++i) {
-//             current = current->getNext();
-//         }
-//         return current->getData();
+//     Node<Monster>* randomMonst = monsters.findAtPos(ElegirMounstro->lanzar());
+//     return randomMonst->getData(); // Esto ya devuelve un Monster*
 // }
-
 
 
 void Logica::readCalabozos() {
@@ -66,6 +65,8 @@ void Logica::readCalabozos() {
         getline(ss, nombre, ',');
         getline(ss, ubicacion, ',');
         getline(ss, descripcion, ',');
+
+        
         
 
         escenarios.addNode(Calabozo(nombre, ubicacion, descripcion, new Monster("aarakocra",0.25,"humanoid (aarakocra)","Medium",12,13,"neutral good") ));
@@ -138,13 +139,144 @@ void Logica::stats(Jugador* jugador){
         jugador->imprimirMensaje(true);
      }
 }
+void Logica::entrarCalabozo(Jugador* jug){
 
-void Logica::menu(){
+    Node<Calabozo>* cuarto = escenarios.findAtPos(dadoCalabozo->lanzar());
+    Calabozo cal = cuarto->getData();
+    Monster* mon = cal.getMounstro();
+    
+    while (mon->getHp() >=0 ){
+        cout << cuarto->getData() << endl;
+        cuarto = escenarios.findAtPos(dadoCalabozo->lanzar());
+
+    } 
+    cout << cuarto->getData() << endl;
+
+    menuBatalla(jug, mon);
+
+
+
+
+   
+
+
+    
+}
+
+void Logica::triunfo(Jugador* j ){
+    cout <<"Felicidades! MATASTE a uno de los malos"<<endl;
+    j->imprimirMensaje(true);
+    cout << "Presione ENTER...";
+        cin.ignore();
+        cin.get(); 
+    menuD();
+
+}
+
+void Logica::derrota(Jugador* j){
+    cout<<"Terrible!"<<endl;
+    j->imprimirMensaje(false);
+    cout << "Presione ENTER...";
+        cin.ignore();
+        cin.get(); 
+    exit(0);
+}
+
+void Logica::atacar(Jugador* j, Monster* mon, string quien){
+    if (quien == "atacante"){
+        cout<< j->get_nombre() << " Es te es tu lp "<<j->get_lp()<<endl;
+        cout << mon->getName() << " Tiene un hp de "<< mon->getHp()<<endl;
+        mon->setHp(mon->getHp()-(dadoPersonaje->lanzar(j->get_hp())));
+        cout << "Las cosas han cambiado";
+        cout << mon->getName() << " Tiene un hp de "<< mon->getHp()<<endl;
+        if(mon->getHp()<0){
+            //j->mounstros_derrotados.addNode(mon)
+            j->mounstros_derrotados.addNode(*new Monster(*mon));
+            triunfo(j);
+
+
+
+        }
+        cout << "Presione ENTER...";
+        cin.ignore();
+        cin.get(); 
+
+    } else{
+        cout<<"Turno del mounstro"<<endl;
+        cout<< j->get_nombre() << " Este es tu lp "<<j->get_lp()<<endl;
+        cout << mon->getName() << " Tiene un hp de "<< mon->getHp()<<endl;
+        j->set_lp(j->get_lp()-(dadoAtaqueMounstro->lanzar()));
+        cout << "Las cosas han cambiado";
+        cout<< j->get_nombre() << " Este es tu lp "<<j->get_lp()<<endl;
+        if(j->get_lp()<0){
+            //j->mounstros_derrotados.addNode(mon)
+            
+            derrota(j);
+
+    }
+    }
+}
+
+// void Logica::menuBatalla(Jugador* j, Monster* monster ){
+//     string respuestas;
+//     cout << "Presione ENTER...";
+//         cin.ignore();
+//         cin.get(); 
+//     cout<<endl<<"****************"<<endl;
+//     cout<<"Una batalla contra "<<monster->getName()<<" ha empezado"<<endl;
+
+
+//     while(j->get_lp() >0 || monster->getHp() > 0){
+//     cout<<"1. atacar (tirar dado)"<<endl;
+//     cout<<"2. Mostrar hechizos"<<endl;
+    
+
+//     cin >> respuestas;
+//     if (respuestas == "1") {
+//         atacar(j,monster,"atacante");
+//         atacar(j,monster,"natacante");
+
+
+//     } else if (respuestas == "2"){
+//         spells.print();
+
+//     } 
+        
+        
+//     }}
+
+void Logica::menuBatalla(Jugador* j, Monster* monster) {
+    string respuestas;
+    cout << "Presione ENTER...";
+    cin.ignore();
+    cin.get(); 
+    cout << endl << "****************" << endl;
+    cout << "Una batalla contra " << monster->getName() << " ha empezado" << endl;
+
+    while (j->get_lp() > 0 && monster->getHp() > 0) {
+        cout << "1. atacar (tirar dado)" << endl;
+        cout << "2. Mostrar hechizos" << endl;
+
+        cin >> respuestas;
+        if (respuestas == "1") {
+            atacar(j, monster, "atacante");
+            atacar(j, monster, "natacante");
+        } else if (respuestas == "2") {
+            spells.print();
+        } 
+    }
+}
+
+
+
+
+void Logica::menuD(){
     string choice;
     bool keepPlaying = true;
     cargarArchivos();
     Jugador* jugador1 = crearPersonaje();
-    cout << "\nAhora sí, ¡A JUGAR!";
+    cout << "\nAhora sí, ¡A JUGAR!"<<endl;
+    cout << "Para entrar a cada calabozo se lanzará un dado de 20 caras para ver a cuál se entra";
 
     
     do {
@@ -157,14 +289,17 @@ void Logica::menu(){
         cout <<"5. Acabar Juego"<<endl;
         cin >> choice;
         if (choice == "1") {
-            //entrarCalabozo();
+            entrarCalabozo(jugador1);
+            
+            keepPlaying = false;
+
             
         }
-        if (choice == "2") {
+        else if (choice == "2") {
             spells.print();
             keepPlaying = false;
         }
-        if (choice == "3") {
+        else if (choice == "3") {
             stats(jugador1);
             keepPlaying = false;
 
